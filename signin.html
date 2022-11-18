@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Pet Paradise | Register</title>
+		<link rel="stylesheet" href="register.css">
+		<link rel="stylesheet" href="styles.css">
+	</head>
+	<body>
+	
+		<div class="hero">
+			<div class="form-box">
+				<div class="button-box">
+					<div id="btn"></div>
+					<button type="button" class="toggle-btn" onclick="login()">Log In</button>
+					<button type="button" class="toggle-btn" onclick="register()">Sign Up</button>
+				</div>
+			</div>
+			<form id="login" class="input-group">
+				<input type="text" class="input-field" placeholder="Username" required>
+				<input type="text" class="input-field" placeholder="Password" required>
+				<button type="submit" class="submit-btn">Log In</button>
+				<br>
+				<a href="petparadise.html" style="text-decoration:none;"><button type="button" class="submit-btn"  style="width:40%;">Home</button></a>
+			</form>
+			<form id="register" class="input-group" style="display:none;">
+				<input type="text" class="input-field" placeholder="Username" required>
+				<input type="email" class="input-field" placeholder="Email" required>
+				<input type="text" class="input-field" placeholder="Password" required>
+				<button type="submit" class="submit-btn">Register</button>
+				<br>
+				<a href="petparadise.html" style="text-decoration:none;"><button type="button" class="submit-btn" style="width:40%;">Home</button></a>
+			</form>
+		</div>
+		<script>
+			var x = document.getElementById("login");
+			var y = document.getElementById("register");
+			var z = document.getElementById("btn");
+			
+			function register() {
+				x.style.display="none";
+				y.style.display="grid";
+				z.style.left = "110px";
+			}
+			
+			function login() {
+				x.style.display="grid";
+				y.style.display="none";
+				z.style.left = "0px";
+			}
+			
+			
+			
+		</script>
+	</body>
+</html>
