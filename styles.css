@@ -1,0 +1,259 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font:600 16px/18px 'Open Sans',sans-serif;
+    background-color: #333;
+}
+
+nav {
+	overflow: auto;
+}
+
+.navbar {
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #000005;
+    color: white;
+}
+
+.brand-title {
+    font-size: 1.5rem;
+    margin: .5rem;
+}
+
+.navbar-links {
+    height: 100%;
+}
+
+.navbar-links ul {
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-links li {
+    list-style: none;
+}
+
+.navbar-links li a {
+    display: block;
+    text-decoration: none;
+    color: white;
+    padding: 1rem;
+}
+
+.navbar-links li:hover {
+    background-color: #555;
+}
+
+.toggle-button {
+    position: absolute;
+    top: .75rem;
+    right: 1rem;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+}
+
+.toggle-button .bar {
+    height: 3px;
+    width: 100%;
+    background-color: white;
+    border-radius: 10px;
+}
+
+@media (max-width: 800px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .toggle-button {
+        display: flex;
+    }
+
+    .navbar-links {
+        display: none;
+        width: 100%;
+    }
+
+    .navbar-links ul {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .navbar-links ul li {
+        text-align: center;
+    }
+
+    .navbar-links ul li a {
+        padding: .5rem 1rem;
+    }
+
+    .navbar-links.active {
+        display: flex;
+    }
+}
+
+#SLIDE_BG {
+	width: 100%;
+	height: 100vh;
+	background-position: center center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	backface-visibility: hidden;
+	animation: slideBg 45s linear infinite 0s;
+	animation-timing-function: ease-in-out;
+	background-image: url('file:///Applications/MAMP/htdocs/first/cat.png');
+}
+
+@keyframes slideBg {
+	0,100% {
+		background-image: url('file:///Applications/MAMP/htdocs/first/cat.png');
+	}
+	25% {
+		background-image: url('2.jpeg');
+	}
+	50% {
+		background-image: url('3.jpeg');
+	}
+	75% {
+		background-image: url('4.jpeg');
+	}
+}
+
+#main-text {
+	z-index: 100;
+  	position: absolute;
+  	color: white;
+  	font-size: 24px;
+  	font-weight: bold;
+  	top: 45%;
+  	left: 10%;
+  	background-color: black;
+}
+
+#sub-text {
+	z-index: 100;
+  	position: absolute;
+  	color: white;
+  	font-size: 14px;
+  	font-weight: bold;
+  	top: 50%;
+  	left: 10%;
+  	background-color: black;
+}
+
+#button {
+	z-index: 100;
+  	position: absolute;
+  	color: black;
+  	font-size: 24px;
+  	top: 65%;
+  	left: 10%;
+  	cursor: pointer;
+  	padding: 9px;
+  	border-radius: 30px;
+  	border: none;
+  	background-color: #DDDDE1;
+}
+
+#button:hover {
+	background-color: #767676;
+	color: white;
+	border: 1px solid #06FFF7;
+}
+
+.flex_direction {
+  text-align: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: row;
+  gap: 5%;
+ }
+
+#home_button {
+	color: white;
+  	font-size: 24px;
+  	top: 65%;
+  	left: 10%;
+  	cursor: pointer;
+  	padding: 9px;
+  	border-radius: 30px;
+  	border: none;
+  	background-color: #531271;
+}
+
+#home_button:hover {
+	background-color: #A920E9;
+	color: black;
+}
+
+#cat {
+	height: 550px;
+	width: 550px;
+	border-radius: 12px;
+}
+
+#cat:hover {
+	border: 10px solid lightgreen;
+}
+
+#dog {
+	height: 550px;
+	width: 550px;
+	border-radius: 12px;
+}
+
+#dog:hover {
+	border: 10px solid lightgreen;
+}
+
+.image-grid {
+	--gap: 16px;
+	--num-cols: 4;
+	--row-height: 300px;
+	
+	box-sizing: border-box;
+	padding: var(--gap);
+	
+	display: grid;
+	grid-template-columns: repeat(var(--num-cols), 1fr);
+	grid-auto-rows: var(--row-height);
+	gap: var(--gap);
+}
+
+.image-grid > img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.image-grid-col-2 {
+	grid-column: span 2;
+}
+
+.image-grid-row-2 {
+	grid-row: span 2;
+}
+
+@media screen and (max-width: 1024px){
+	.image-grid {
+		--num-cols: 2;
+		--row-height: 200px;
+	}
+}
+
+section { 
+  display: block;
+  border: solid 0.1px black;
+}
+
